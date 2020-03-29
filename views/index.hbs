@@ -1,41 +1,18 @@
 <section class="hero is-link is-fullheight">
-  <div class="hero-body">
-    <div class="container">
+  {{>navbar}}
+  <div class="hero-body columns">
+    <div class="container column">
       <h1 class="title">
         {{ title }}
       </h1>
       <h2 class="subtitle">
-        {{ subtitle }}
+        {{ subtitle }} <br />
+        {{ tagline }}
       </h2>
     </div>
-    <div class="card">
-      <div class="card-content">
-        <div class="content">
-          <div class="field">
-            <label class="label">Username</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text" />
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Email</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input" type="email" />
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-            </div>
-          </div>
-          <div class="has-text-centered">
-            <button class="button is-link">Log In</button>
-            <button class="button is-link is-light">Sign Up</button>
-          </div>
-        </div>
-      </div>
+    <div class="column is-one-quarter">
+      <i class="fas fa-piggy-bank fa-flip-horizontal icon is-large"></i>
     </div>
   </div>
+  {{>footer}}
 </section>
