@@ -16,4 +16,8 @@ router.get("/login", (req, res, next) => {
   res.render("login", {});
 });
 
+router.get("/price-chart", (req, res, next) => {
+  res.render("main", {});
+});
+
 module.exports = router;
