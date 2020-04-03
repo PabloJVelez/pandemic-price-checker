@@ -20,4 +20,8 @@ router.get("/price-chart", (req, res, next) => {
   res.render("main", {});
 });
 
+router.get("/users/reports", (req, res, next) => {
+  res.render("createReport", {});
+});
+
 module.exports = router;
