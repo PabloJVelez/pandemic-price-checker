@@ -24,4 +24,8 @@ router.get("/users/reports", (req, res, next) => {
   res.render("createReport", {});
 });
 
+router.get("/signup", (req, res, next) => {
+  res.render("signup", {});
+});
+
 module.exports = router;
