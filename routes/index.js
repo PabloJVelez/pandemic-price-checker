@@ -12,20 +12,4 @@ router.get("/", (req, res, next) => {
   });
 });
 
-router.get("/login", (req, res, next) => {
-  res.render("login", {});
-});
-
-router.get("/price-chart", (req, res, next) => {
-  res.render("main", {});
-});
-
-router.get("/users/reports", (req, res, next) => {
-  res.render("createReport", {});
-});
-
-router.get("/signup", (req, res, next) => {
-  res.render("signup", {});
-});
-
 module.exports = router;

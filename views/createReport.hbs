@@ -2,77 +2,79 @@
   {{>userNavbar}}
 </section>
 
-<div class="columns is-centered">
-  <div class="column is-one-third">
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Create New Report</h1>
-        <div class="field">
-          <label class="label">Store Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Name" />
+<form method="POST" action="/users/reports">
+  <div class="columns is-centered">
+    <div class="column is-one-third">
+      <section class="section">
+        <div class="container">
+          <h1 class="title">Create New Report</h1>
+          <div class="field">
+            <label class="label">Store Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Name" />
+            </div>
           </div>
-        </div>
 
-        <div class="field">
-          <label class="label">Address</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Address" />
+          <div class="field">
+            <label class="label">Address</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Address" />
+            </div>
           </div>
-        </div>
 
-        <div class="columns field is-grouped">
-          <div class="column control">
-            <label class="label">ZipCode</label>
-            <input class="input" type="text" placeholder="ZipCode" />
+          <div class="columns field is-grouped">
+            <div class="column control">
+              <label class="label">ZipCode</label>
+              <input class="input" type="text" placeholder="ZipCode" />
+            </div>
+            <div class="column control">
+              <label class="label">City</label>
+              <input class="input" type="text" placeholder="City" />
+            </div>
+            <div class="column control">
+              <label class="label">State</label>
+              <div class="select">
+                <select>
+                  <option>Select state</option>
+                  <option>With options</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div class="column control">
-            <label class="label">City</label>
-            <input class="input" type="text" placeholder="City" />
+
+          <div class="columns field is-grouped">
+            <div class="column control is-two-thirds">
+              <label class="label">Reported Item</label>
+              <input class="input" type="text" placeholder="Item" />
+            </div>
+            <div class="column control">
+              <label class="label">Upload Image</label>
+              <button class="button is-link is-light is-fullwidth">
+                Choose file...
+              </button>
+            </div>
           </div>
-          <div class="column control">
-            <label class="label">State</label>
-            <div class="select">
-              <select>
-                <option>Select state</option>
-                <option>With options</option>
-              </select>
+
+          <div class="field">
+            <div class="control">
+              <button class="button is-link is-fullwidth" input="submit">
+                Submit
+              </button>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <a
+                class="button is-danger is-light is-fullwidth"
+                href="/price-chart"
+              >
+                Cancel
+              </a>
             </div>
           </div>
         </div>
-
-        <div class="columns field is-grouped">
-          <div class="column control is-two-thirds">
-            <label class="label">Reported Item</label>
-            <input class="input" type="text" placeholder="Item" />
-          </div>
-          <div class="column control">
-            <label class="label">Upload Image</label>
-            <button class="button is-link is-light is-fullwidth">
-              Choose file...
-            </button>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="control">
-            <button class="button is-link is-fullwidth">
-              Submit
-            </button>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="control">
-            <a
-              class="button is-danger is-light is-fullwidth"
-              href="/price-chart"
-            >
-              Cancel
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
-</div>
+</form>
