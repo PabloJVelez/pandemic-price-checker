@@ -1,12 +1,10 @@
 var express = require("express");
 var router = express.Router();
 
-router.get("/users/reports", (req, res, next) => {
-  res.render("createReport", {});
-});
+const users_controller = require("../controllers/usersController");
 
-router.post("/users/reports", (req, res, next) => {
-  console.log(req.body);
-});
+router.get("/users/reports", users_controller.user_report_get);
+
+router.post("/users/reports", users_controller.user_report_post);
 
 module.exports = router;

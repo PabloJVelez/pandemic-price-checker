@@ -1,8 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
-router.get("/price-chart", (req, res, next) => {
-  res.render("main", {});
-});
+const price_chart_controller = require("../controllers/priceChartController");
+
+router.get("/price-chart", price_chart_controller.price_chart_get);
 
 module.exports = router;
