@@ -46,15 +46,7 @@
               <label class="label">City</label>
               <input class="input" type="text" name="city" placeholder="City" />
             </div>
-            <div class="column control">
-              <label class="label">State</label>
-              <div class="select">
-                <select>
-                  <option>Select state</option>
-                  <option>With options</option>
-                </select>
-              </div>
-            </div>
+            {{> stateDropdown}}
           </div>
 
           <div class="columns field is-grouped">
