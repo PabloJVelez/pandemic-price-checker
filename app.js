@@ -11,6 +11,10 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
+// body-parser
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 // view engine setup
 app.engine(
   "hbs",
