@@ -16,32 +16,33 @@ var user_report_post = (req, res, next) => {
   body("state", "State must be non-empty").trim().isLength({ min: 1 });
   body("item", "Reported item must be non-empty").trim().isLength({ min: 1 });
 
-  //TODO: remove deprecated middleware sanitize
   //TODO: fix sanitization for zipCode
-  sanitizeBody("storeName").escape();
-  sanitizeBody("address").escape();
-  sanitizeBody("zipCode").escape();
-  sanitizeBody("city").escape();
-  sanitizeBody("state").escape();
-  sanitizeBody("item").escape();
+  body("storeName").escape();
+  body("address").escape();
+  body("zipCode").escape();
+  body("city").escape();
+  body("state").escape();
+  body("item").escape();
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     // render form with sanitized values
     res.send("NOT IMPLEMENTED");
   } else {
-    //TODO: Create new user report object
+    function UserReport(reportData) {
+      this.storeName = reportData.storeName;
+      this.address = reportData.address;
+      this.zipCode = reportData.zipCode;
+      this.city = reportData.city;
+      this.state = reportData.state;
+      this.reportedItem = reportData.item;
+    }
+
+    let userReport = new UserReport(req.body);
     // form data is valid
-    let report = {
-      storeName: req.body.storeName,
-      address: req.body.address,
-      zipCode: req.body.zipCode,
-      city: req.body.city,
-      state: req.body.state,
-      reportedItem: req.body.item,
-    };
     //TODO: Save new user report
-    console.log(report);
+
+    console.log(userReport);
   }
 };
 
