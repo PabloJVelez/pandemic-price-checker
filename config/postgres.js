@@ -1,12 +1,21 @@
 require("dotenv").config();
 
 const { Pool } = require("pg");
-//TODO: Add environment var for connection string selection
 
-const connStr = `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}
-    /${process.env.DB_DATABASE}`;
+// const connStr = `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_DATABASE}`;
 
-module.exports.pool = new Pool({
-  connectionString: connStr,
+const pool = new Pool({
+  // connectionString: connStr,
   //TODO add ssl env
+  user: `${process.env.DB_USER}`,
+  host: `${process.env.DB_HOST}`,
+  database: `${process.env.DB_DATABASE}`,
+  password: `${process.env.DB_PASSWORD}`,
+  port: `${process.env.DB_PORT}`,
 });
+
+pool.query("SELECT NOW()", (err, res) => {
+  console.log(err, res.rows[0]);
+});
+
+module.exports = { pool };

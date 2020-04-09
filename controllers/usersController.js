@@ -1,4 +1,5 @@
-const { body, sanitizeBody, validationResult } = require("express-validator");
+const { body, validationResult } = require("express-validator");
+const { pool } = require("../config/postgres");
 
 // Display user create-report form view
 var user_report_get = (req, res, next) => {
@@ -40,7 +41,29 @@ var user_report_post = (req, res, next) => {
 
     let userReport = new UserReport(req.body);
     // form data is valid
-    //TODO: Save new user report
+
+    pool.connect().then((client) => {
+      return client
+        .query(
+          'INSERT INTO "ReportedStores" (storeName, address, zipCode, city, storeState, item) VALUES ($1, $2, $3, $4, $5, $6)',
+          [
+            userReport.storeName,
+            userReport.address,
+            userReport.zipCode,
+            userReport.city,
+            userReport.state,
+            userReport.reportedItem,
+          ]
+        )
+        .then((result) => {
+          client.release();
+          console.log(result.rows[0]);
+        })
+        .catch((err) => {
+          client.release();
+          console.log(err);
+        });
+    });
 
     console.log(userReport);
   }
