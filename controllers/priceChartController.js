@@ -1,4 +1,7 @@
 const { pool } = require("../config/postgres");
+const {
+  FilterQuerySelection,
+} = require("../web/middleware/services/querySelection");
 
 var result = null;
 
@@ -7,7 +10,9 @@ var price_chart_get = (req, res, next) => {
 
   pool.connect().then(async (client) => {
     try {
-      result = await client.query('SELECT * FROM "ReportedStores" LIMIT 30');
+      let result = await client.query(
+        'SELECT * FROM "ReportedStores" LIMIT 30'
+      );
       client.release();
 
       res.render("main", {
@@ -20,7 +25,24 @@ var price_chart_get = (req, res, next) => {
   });
 };
 
-var price_chart_post = (req, res, next) => {};
+var price_chart_post = (req, res, next) => {
+  pool.connect().then(async (client) => {
+    try {
+      let values = [req.body.searchTerm];
+      let result = await client.query(
+        FilterQuerySelection(req.body.category),
+        values
+      );
+      client.release();
+      res.render("main", {
+        reportedStores: result.rows,
+      });
+    } catch (err) {
+      client.release();
+      console.log(err);
+    }
+  });
+};
 
 module.exports = {
   price_chart_get: price_chart_get,

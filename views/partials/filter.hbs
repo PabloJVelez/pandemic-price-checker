@@ -1,28 +1,35 @@
-<div class="field is-grouped">
-  <p class="control is-expanded has-icons-left">
-    <input class="input" type="text" placeholder="Search..." />
-    <span class="icon is-small is-left">
-      <i class="fas fa-search"></i>
-    </span>
-  </p>
-  <div class="control">
-    <div class="select is-link">
-      <select>
-        <option>Name</option>
-        <option>City</option>
-        <option>State</option>
-        <option>ZipCode</option>
-      </select>
+<form action="/price-chart" method="POST">
+  <div class="field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input
+        class="input"
+        type="text"
+        placeholder="Search..."
+        name="searchTerm"
+      />
+      <span class="icon is-small is-left">
+        <i class="fas fa-search"></i>
+      </span>
+    </p>
+    <div class="control">
+      <div class="select is-link">
+        <select name="category">
+          <option value="storename">Name</option>
+          <option value="city">City</option>
+          <option value="storestate">State</option>
+          <option value="zipcode">ZipCode</option>
+        </select>
+      </div>
     </div>
+    <p class="control">
+      <button class="button is-link" input="submit">
+        Search
+      </button>
+    </p>
+    <p class="control">
+      <a class="button is-primary" href="/users/reports">
+        Create New Report
+      </a>
+    </p>
   </div>
-  <p class="control">
-    <a class="button is-link">
-      Search
-    </a>
-  </p>
-  <p class="control">
-    <a class="button is-primary" href="/users/reports">
-      Create New Report
-    </a>
-  </p>
-</div>
+</form>
