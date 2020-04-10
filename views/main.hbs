@@ -30,76 +30,27 @@
           <th>Submitted By:</th>
         </tr>
       </thead>
-      <tfoot>
-        <tr>
-          <th>Store Name</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>State</th>
-          <th>ZipCode</th>
-          <th>Store Type</th>
-          <th>
-            <abbr
-              title="This column represents the price-gouged item for a particular store."
-              >Item</abbr
-            >
-          </th>
-          <th>Item Photo</th>
-          <th>Submitted By</th>
-        </tr>
-      </tfoot>
+      <tfoot></tfoot>
       <tbody>
+        {{#each reportedStores}}
         <tr>
           <td>
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
               title="2016–17 UEFA Champions League"
-              >Billy's Hardware Store</a
+              >{{ this.storename }}</a
             >
           </td>
-          <td>2300 Hills Hollow</td>
-          <td>Houston</td>
-          <td>TX</td>
-          <td>77077</td>
+          <td>{{ this.address }}</td>
+          <td>{{ this.city }}</td>
+          <td>{{ this.storestate }}</td>
+          <td>{{ this.zipcode }}</td>
           <td>Tools</td>
-          <td>Sanitizer</td>
+          <td>{{ this.item }}</td>
           <td>PHOTO HERE</td>
           <td>ji2coolPRO</td>
         </tr>
-        <tr>
-          <td>
-            <a
-              href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-              title="2016–17 UEFA Champions League"
-              >Billy's Hardware Store</a
-            >
-          </td>
-          <td>2300 Hills Hollow</td>
-          <td>Houston</td>
-          <td>TX</td>
-          <td>77077</td>
-          <td>Tools</td>
-          <td>Sanitizer</td>
-          <td>PHOTO HERE</td>
-          <td>ji2coolPRO</td>
-        </tr>
-        <tr>
-          <td>
-            <a
-              href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-              title="2016–17 UEFA Champions League"
-              >Billy's Hardware Store</a
-            >
-          </td>
-          <td>2300 Hills Hollow</td>
-          <td>Houston</td>
-          <td>TX</td>
-          <td>77077</td>
-          <td>Tools</td>
-          <td>Sanitizer</td>
-          <td>PHOTO HERE</td>
-          <td>ji2coolPRO</td>
-        </tr>
+        {{/each}}
       </tbody>
     </table>
   </div>

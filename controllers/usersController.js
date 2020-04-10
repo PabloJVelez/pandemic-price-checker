@@ -35,9 +35,9 @@ var user_report_post = (req, res, next) => {
 
     let userReport = new UserReport(req.body);
 
-    pool.connect().then((client) => {
-      return client
-        .query(
+    pool.connect().then(async (client) => {
+      try {
+        const result = await client.query(
           'INSERT INTO "ReportedStores" (storeName, address, zipCode, city, storeState, item) VALUES ($1, $2, $3, $4, $5, $6)',
           [
             userReport.storeName,
@@ -47,15 +47,14 @@ var user_report_post = (req, res, next) => {
             userReport.state,
             userReport.reportedItem,
           ]
-        )
-        .then((result) => {
-          client.release();
-          console.log(result.rows[0]);
-        })
-        .catch((err) => {
-          client.release();
-          console.log(err);
-        });
+        );
+        client.release();
+        console.log(result.rows[0]);
+        return res.redirect("/price-chart");
+      } catch (err) {
+        client.release();
+        console.log(err);
+      }
     });
 
     console.log(userReport);

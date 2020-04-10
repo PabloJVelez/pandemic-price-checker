@@ -1,5 +1,23 @@
+const { pool } = require("../config/postgres");
+
+var result = null;
+
 var price_chart_get = (req, res, next) => {
-  res.render("main", {});
+  // TODOL implement caching, only fetch ones not in cache
+  pool.connect().then(async (client) => {
+    try {
+      result = await client.query('SELECT * FROM "ReportedStores" LIMIT 30');
+      client.release();
+      console.log(result.rows);
+
+      res.render("main", {
+        reportedStores: result.rows,
+      });
+    } catch (err) {
+      client.release();
+      console.log(err);
+    }
+  });
 };
 
 module.exports = {
