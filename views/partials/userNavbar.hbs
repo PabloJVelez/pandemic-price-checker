@@ -1,15 +1,38 @@
 <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
   <div class="navbar-menu">
     <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link is-arrowless">
+          My Account
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Your profile
+          </a>
+          <a class="navbar-item">
+            Your settings
+          </a>
+          <a class="navbar-item">
+            Help
+          </a>
+          <hr class="navbar-divider" />
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
       <a class="navbar-item">
         Reported Stores
       </a>
     </div>
 
     <div class="navbar-end">
-      <a class="navbar-item">
-        <strong>My Account</strong>
-      </a>
+      <form action="/price-chart/logout" method="POST">
+        <button class="navbar-item button is-white">
+          <strong>Sign out</strong>
+        </button>
+      </form>
     </div>
   </div>
 </nav>
