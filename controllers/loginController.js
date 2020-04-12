@@ -5,7 +5,6 @@ var login_get = (req, res, next) => {
 };
 
 var login_post = (req, res, next) => {
-  // Obtain User Info
   const email = req.body.email;
   const password = req.body.loginPassword;
 
@@ -13,10 +12,11 @@ var login_post = (req, res, next) => {
 
   auth.signInWithEmailAndPassword(email, password).then((credential) => {
     console.log(credential.user);
-    //reset form data here
+    //TODO: reset form data here
   });
 };
 
 module.exports = {
   login_get: login_get,
+  login_post: login_post,
 };

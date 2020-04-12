@@ -5,7 +5,6 @@ var signup_controller_get = (req, res, next) => {
 };
 
 var signup_controller_post = (req, res, next) => {
-  // Obtain user info
   const email = req.body.signupEmail;
   const name = req.body.signupName;
   const password = req.body.signupPassword;
