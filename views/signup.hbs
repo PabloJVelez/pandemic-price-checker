@@ -10,7 +10,7 @@
         <div class="columns is-centered">
           <div class="card column is-narrow">
             <div class="card-content">
-              <div class="content">
+              <form class="content" id="signup-form" method="POST">
                 <div class="field">
                   <p class="subtitle">Create your free account</p>
                 </div>
@@ -23,7 +23,7 @@
                 <div class="field">
                   <label class="label">Email</label>
                   <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" />
+                    <input name="signupEmail" class="input" type="email" />
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
@@ -33,7 +33,7 @@
                 <div class="field">
                   <label class="label">Full name</label>
                   <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" />
+                    <input name="signupName" class="input" type="text" />
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
@@ -43,7 +43,11 @@
                 <div class="field">
                   <label class="label">Password</label>
                   <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" />
+                    <input
+                      name="signupPassword"
+                      class="input"
+                      type="password"
+                    />
                     <span class="icon is-small is-left">
                       <i class="fas fa-key"></i>
                     </span>
@@ -53,18 +57,26 @@
                 <div class="field">
                   <label class="label">Confirm password</label>
                   <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" />
+                    <input
+                      name="signupConfirmPassword"
+                      class="input"
+                      type="password"
+                    />
                     <span class="icon is-small is-left">
                       <i class="fas fa-key"></i>
                     </span>
                   </div>
                 </div>
                 <div class="has-text-centered">
-                  <button class="button is-link is-fullwidth" disabled>
+                  <button
+                    class="button is-link is-fullwidth"
+                    input="submit"
+                    type="submit"
+                  >
                     Create your account
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
