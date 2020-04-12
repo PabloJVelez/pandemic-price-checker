@@ -1,22 +1,4 @@
-var firebase = require("firebase/app");
-
-require("firebase/auth");
-require("firebase/firestore");
-require("dotenv").config();
-
-var firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  appId: process.env.FIREBASE_APP_ID,
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-// Make Auth and Firestore references
-// const auth = firebase.auth();
-const db = firebase.firestore();
+const { auth } = require("../web/middleware/services/auth");
 
 var signup_controller_get = (req, res, next) => {
   res.render("signup", {});
@@ -31,7 +13,6 @@ var signup_controller_post = (req, res, next) => {
 
   console.log(email, name, password, confirmPassword);
 
-  const auth = firebase.auth();
   auth.createUserWithEmailAndPassword(email, password).then((credential) => {
     console.log(credential.user);
   });

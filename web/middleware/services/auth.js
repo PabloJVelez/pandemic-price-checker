@@ -1,13 +1,12 @@
-// // Signup
-// const signupForm = document.querySelectorAll("#signup-form");
-// signupForm.addEventListener("submit", (e) => {
-//   e.preventDefault();
+var firebase = require("firebase/app");
 
-//   // Obtain user info
-//   const email = signupForm["signup-email"].value;
-//   const name = signupForm["signup-name"].value;
-//   const password = signupForm["signup-password"].value;
-//   const confirmPassword = signupForm["signup-confirm-password"].value;
+require("firebase/auth");
+require("firebase/firestore");
+require("dotenv").config();
 
-//   console.log(email, name, password, confirmPassword);
-// });
+const { firebaseConfig } = require("../../../config/firebase");
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+module.exports = { auth };
+// const db = firebase.firestore();
