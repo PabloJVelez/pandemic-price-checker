@@ -12,9 +12,14 @@ var signup_controller_post = (req, res, next) => {
 
   console.log(email, name, password, confirmPassword);
 
-  auth.createUserWithEmailAndPassword(email, password).then((credential) => {
-    console.log(credential.user);
-  });
+  auth
+    .createUserWithEmailAndPassword(email, password)
+    .then((credential) => {
+      console.log(credential.user);
+    })
+    .then(() => {
+      res.redirect("/price-chart");
+    });
 };
 
 module.exports = {
