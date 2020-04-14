@@ -33,6 +33,11 @@
                     </span>
                   </div>
                 </div>
+                <div>
+                  {{#if err}}
+                  <h6 class="has-text-danger">{{ err }}</h6>
+                  {{/if}}
+                </div>
                 <div class="has-text-centered">
                   <button class="button is-link" input="submit" type="submit">
                     Log In

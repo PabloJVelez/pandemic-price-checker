@@ -5,7 +5,7 @@
 
 2. Implement site-wise caching
 
-3. Add middleware for firebase authentication failures and error handling on sign-on, log-out, and creating an account
+3. --Add middleware for firebase authentication failures and error handling on sign-on, log-out, and creating an account--
 
 4. Implement field validation on all fields upon report submission
 

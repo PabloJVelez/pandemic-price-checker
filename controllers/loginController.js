@@ -5,18 +5,15 @@ var login_get = (req, res, next) => {
 };
 
 var login_post = (req, res, next) => {
-  const email = req.body.loginEmail;
-  const password = req.body.loginPassword;
-
-  console.log(email, password);
-
   auth
-    .signInWithEmailAndPassword(email, password)
+    .signInWithEmailAndPassword(req.body.loginEmail, req.body.loginPassword)
     .then((credential) => {
-      console.log(credential.user);
-    })
-    .then(() => {
       res.redirect("/price-chart");
+    })
+    .catch((err) => {
+      res.render("login", {
+        err: err.message,
+      });
     });
 };
 

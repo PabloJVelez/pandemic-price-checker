@@ -35,7 +35,7 @@
                   <div class="control has-icons-left has-icons-right">
                     <input name="signupName" class="input" type="text" />
                     <span class="icon is-small is-left">
-                      <i class="fas fa-envelope"></i>
+                      <i class="fas fa-user"></i>
                     </span>
                   </div>
                 </div>
@@ -66,6 +66,11 @@
                       <i class="fas fa-key"></i>
                     </span>
                   </div>
+                </div>
+                <div>
+                  {{#if err}}
+                  <h6 class="has-text-danger">{{ err }}</h6>
+                  {{/if}}
                 </div>
                 <div class="has-text-centered">
                   <button
