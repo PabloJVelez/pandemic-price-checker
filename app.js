@@ -2,6 +2,9 @@ var express = require("express");
 var path = require("path");
 var exphbs = require("express-handlebars");
 
+// cors
+var cors = require("cors");
+
 // routes
 var indexRouter = require("./routes/index");
 var loginRouter = require("./routes/login");
@@ -10,6 +13,9 @@ var signupRouter = require("./routes/signup");
 var usersRouter = require("./routes/users");
 
 var app = express();
+
+// cors setup
+app.use(cors());
 
 // body-parser
 app.use(express.urlencoded({ extended: false }));

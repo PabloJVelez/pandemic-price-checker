@@ -53,7 +53,7 @@
 
 21. Add Geolocation to automatically fill in the form with address data (maybe Google maps api)
 
-22. Setup CORS
+22. --Setup CORS--
 
 23. Integrate TravisCI
 
