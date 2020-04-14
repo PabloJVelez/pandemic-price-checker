@@ -6,8 +6,6 @@ const {
 var result = null;
 
 var price_chart_get = (req, res, next) => {
-  // TODOL implement caching, only fetch ones not in cache
-
   pool.connect().then(async (client) => {
     try {
       let result = await client.query(

@@ -31,7 +31,6 @@ var user_report_post = (req, res, next) => {
     res.send("NOT IMPLEMENTED");
   } else {
     // form data is valid
-    //TODO: check if values are not empty strings
 
     let userReport = new UserReport(req.body);
 

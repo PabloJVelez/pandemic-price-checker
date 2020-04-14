@@ -10,8 +10,6 @@ const pool = new Pool({
   port: `${process.env.DB_PORT}`,
 });
 
-//TODO: Add logging
-
 pool.query("SELECT NOW()", (err, res) => {
   console.log(err, res.rows[0]);
 });
