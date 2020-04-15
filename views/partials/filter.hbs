@@ -26,10 +26,12 @@
         Search
       </button>
     </p>
+    {{#if userIsAuth}}
     <p class="control">
       <a class="button is-primary" href="/users/reports">
         Create New Report
       </a>
     </p>
+    {{/if}}
   </div>
 </form>

@@ -1,9 +1,8 @@
+const { auth } = require("../web/middleware/services/auth");
 const { pool } = require("../config/postgres");
 const {
   FilterQuerySelection,
 } = require("../web/middleware/services/querySelection");
-
-var result = null;
 
 var price_chart_get = (req, res, next) => {
   pool.connect().then(async (client) => {
@@ -12,9 +11,11 @@ var price_chart_get = (req, res, next) => {
         'SELECT * FROM "ReportedStores" LIMIT 30'
       );
       client.release();
-
+      // Track user auth status
+      var user = auth.currentUser;
       res.render("main", {
         reportedStores: result.rows,
+        user: user === null ? false : true,
       });
     } catch (err) {
       client.release();

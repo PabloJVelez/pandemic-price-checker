@@ -1,5 +1,9 @@
 <section class="hero">
+  {{#if user}}
   {{>userNavbar}}
+  {{else}}
+  {{>navbar}}
+  {{/if}}
 </section>
 <section class="section">
   <div class="hero-body">
@@ -10,7 +14,7 @@
     </div>
   </div>
   <div class="container">
-    {{>filter}}
+    {{>filter userIsAuth=user}}
     <table class="table is-striped is-hoverable is-fullwidth">
       <thead>
         <tr>
