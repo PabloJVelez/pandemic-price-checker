@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./web/server.js"
+    "start": "nodemon ./web/server.js",
+    "test": "jshint ./web/server.js"
   },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
@@ -17,13 +18,14 @@
     "express-handlebars": "^4.0.0",
     "express-validator": "^6.4.0",
     "firebase": "^7.14.0",
-    "hbs": "~4.0.4",
+    "hbs": "^4.1.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.2",
     "pg-promise": "^10.5.0"
   },
   "devDependencies": {
-    "handlebars": "^4.5.0"
+    "handlebars": "^4.7.6",
+    "jshint": "^2.11.0"
   }
 }
