@@ -2,7 +2,7 @@
   {{>userNavbar}}
 </section>
 
-<form action="/users/reports" method="POST">
+<form action="/users/reports" enctype="multipart/form-data" method="POST">
   <div class="columns is-centered">
     <div class="column is-one-third">
       <section class="section">
@@ -56,9 +56,24 @@
             </div>
             <div class="column control">
               <label class="label">Upload Image</label>
-              <button class="button is-link is-light is-fullwidth">
-                Choose file...
-              </button>
+
+              <div class="file">
+                <label class="file-label">
+                  <input
+                    class="file-input"
+                    type="file"
+                    name="reportedItemImg"
+                  />
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                      Choose a file…
+                    </span>
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-const { auth } = require("../web/middleware/services/auth");
+const { auth } = require("../web/middleware/services/firebase");
 
 var logout_post = (req, res, next) => {
   auth.signOut().then(() => {

@@ -2,6 +2,8 @@ var express = require("express");
 var path = require("path");
 var exphbs = require("express-handlebars");
 
+global["XMLHttpRequest"] = require("xmlhttprequest").XMLHttpRequest;
+
 // cors
 var cors = require("cors");
 

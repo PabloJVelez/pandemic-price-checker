@@ -1,7 +1,6 @@
 var firebase = require("firebase/app");
 
 require("firebase/auth");
-require("firebase/firestore");
 require("dotenv").config();
 
 const { firebaseConfig } = require("../../../config/firebase");

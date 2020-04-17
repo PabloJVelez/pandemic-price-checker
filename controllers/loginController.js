@@ -1,4 +1,4 @@
-const { auth } = require("../web/middleware/services/auth");
+const { auth } = require("../web/middleware/services/firebase");
 
 var login_get = (req, res, next) => {
   res.render("login", {});

@@ -1,4 +1,4 @@
-const { auth } = require("../web/middleware/services/auth");
+const { auth } = require("../web/middleware/services/firebase");
 const { pool } = require("../config/postgres");
 const {
   FilterQuerySelection,

@@ -1,4 +1,4 @@
-const { auth } = require("../web/middleware/services/auth");
+const { auth } = require("../web/middleware/services/firebase");
 const { check } = require("express-validator");
 const {
   verifyPassword,

@@ -48,15 +48,13 @@ var user_report_post = (req, res, next) => {
           ]
         );
         client.release();
-        console.log(result.rows[0]);
+
         return res.redirect("/price-chart");
       } catch (err) {
         client.release();
         console.log(err);
       }
     });
-
-    console.log(userReport);
   }
 };
 
